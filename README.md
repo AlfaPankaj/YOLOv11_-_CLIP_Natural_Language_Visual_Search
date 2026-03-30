@@ -35,6 +35,7 @@ If you have an image with a bus and several people:
 - `requirements.txt`: List of required Python packages.
 - `test.jpg`: Input image (auto-downloaded if missing).
 - `search_result.jpg`: The output image highlighting your search result.
+- `Screenshot.png`: The screenshot of terminal and the result 
 
 ## 🎯 Future Upgrades
 - **Video Support:** Apply this to video streams for real-time tracking of specific descriptions.
