@@ -99,7 +99,13 @@ if __name__ == "__main__":
 
     system = VisualSearchSystem()
     
-    if not os.path.exists("test.jpg"):
+    print("\n--- Visual Search System ---")
+    image_path = input("Enter image path (or press Enter for 'test.jpg'): ").strip().strip('"').strip("'")
+    
+    if not image_path:
+        image_path = "test.jpg"
+
+    if image_path == "test.jpg" and not os.path.exists("test.jpg"):
         print("Downloading sample image...")
         sample_url = "https://raw.githubusercontent.com/ultralytics/yolov5/master/data/images/bus.jpg"
         response = requests.get(sample_url)
@@ -107,12 +113,15 @@ if __name__ == "__main__":
             f.write(response.content)
         print("Sample image 'test.jpg' downloaded.")
 
-    system.process_image("test.jpg")
-    
-    print("\n--- Visual Search System Ready ---")
-    print("Try queries like: 'person in a suit', 'blue bus', 'the wheel', 'a man with a backpack'")
-    while True:
-        query = input("\nEnter search query (or 'exit' to quit): ")
-        if query.lower() == 'exit':
-            break
-        system.search(query)
+    if not os.path.exists(image_path):
+        print(f"Error: File '{image_path}' not found.")
+    else:
+        system.process_image(image_path)
+        
+        print("\n--- Ready for Search ---")
+        print("Try: 'person in a suit', 'red car', 'the logo', 'a person smiling'")
+        while True:
+            query = input("\nEnter search query (or 'exit' to quit): ")
+            if query.lower() == 'exit':
+                break
+            system.search(query)

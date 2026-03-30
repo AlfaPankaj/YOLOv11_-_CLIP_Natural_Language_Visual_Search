@@ -4,9 +4,10 @@ This project takes object detection to the next level by combining **YOLOv11** (
 
 ## 🚀 Features
 - **Modern Tech Stack:** Uses the latest YOLOv11 and OpenAI's CLIP.
-- **Natural Language Querying:** Instead of searching for "car", you can search for "the red sports car with a spoiler".
+- **Natural Language Querying:** Search for specific objects using free-form text (e.g., "red sports car with a spoiler").
+- **Custom Image Support:** Process any local image file by simply providing its path.
+- **Smart Path Handling:** Automatically cleans Windows-style paths (removes quotes from drag-and-drop).
 - **Real-time Feature Extraction:** Automatically crops detected objects and generates semantic embeddings.
-- **Visual Output:** Highlights the best-matching object and saves the result as an image.
 
 ## 🧠 How it Works
 1. **Detection:** YOLOv11 identifies all objects in the scene.
